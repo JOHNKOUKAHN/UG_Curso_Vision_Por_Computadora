@@ -2,7 +2,7 @@ import cv2
 
 
 def EsSangre(valorB,valorG,valorR):
-	if(valorB < 30 && valorG < 30 && valorR > 128):
+	if(valorB < 30 and valorG < 30 and valorR > 150):
 		return True
 	else:
 		return False
@@ -10,8 +10,9 @@ def EsSangre(valorB,valorG,valorR):
 
 imagen = cv2.imread('censura.jpg')
 
-for i in range(300,599):
-	for j in range(300,599):
+
+for i in range(50,230):
+	for j in range(50,400):
 		if(EsSangre(imagen[i,j,0],imagen[i,j,1],imagen[i,j,2])):
 
 			imagen[i,j,0]=200
